@@ -1,0 +1,26 @@
+
+.new-tweet {
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #eeeeee;
+  width: 85%;
+  padding: 2px 10px 15px 10px;
+  border-radius: 10px;
+  border: 1px solid #bebebe;
+}
+
+.new-tweet h2 {
+  text-align: left;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+
+#tweetText {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.counter {
+  float: right;
+}
