@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+
+
+
   let currentNum = 0;
   $('#tweetText').on('keyup', function(){
 
@@ -15,5 +18,17 @@ $(document).ready(function(){
       $(counter).html(Math.abs(currentNum));
       $(counter).css('color', 'black')
     }
+
+    // var $button = $('#submitTweet');
+    // console.log(currentNum);
+    //
+    // if (currentNum >= 1) {
+    //   alert("test")
+    //   $button.preventDefault;
+    // }
+
   });
+
+
+
 });

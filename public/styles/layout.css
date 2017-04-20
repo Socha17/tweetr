@@ -52,6 +52,7 @@ main {
   border-radius: 2px;
   height: 40px;
   width: 40px;
+  opacity: 0.5;
 }
 
 .tweet header {
@@ -62,6 +63,7 @@ main {
 }
 
 .tweet header h3 {
+  color: #4B8696;
   margin: 10px 0 15px 5px;
   line-height: 60px;
   vertical-align: top;
@@ -80,10 +82,6 @@ main {
   padding-top: 10px;
 }
 
-.mainTweet span {
-
-}
-
 .tweet footer {
   font-size: 12px;
   border-top: 1px solid #eee
@@ -97,4 +95,27 @@ main {
 
 
 .icons {
+  visibility: hidden;
+  margin: 5px;
+  color: #7AC3B7
+}
+
+.iconSpacing {
+  margin-left: 59%;
+}
+
+
+/* HOVER */
+
+
+.tweet:hover .icons {
+visibility: visible;
+}
+
+.tweet:hover header h3 {
+  color: #244751
+
+}
+.tweet:hover .profilePic {
+  opacity: 1;
 }

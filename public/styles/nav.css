@@ -23,3 +23,21 @@
   line-height: 75px;
   font-size: 2em;
 }
+
+
+#composeBtn {
+  margin-top: 16px;
+  padding: 15px;
+  float: right;
+  border-radius: 5px;
+  background-color: #E7FDFF;
+  border: 1px solid black
+}
+
+.composeIcon {
+  padding-right: 5px;
+}
+
+#composeBtn:hover {
+  background-color: white;
+}
