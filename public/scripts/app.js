@@ -40,6 +40,7 @@ function escape(str) {
 
 $(document).ready(function() {
 
+
   // $.getJSON('/tweets', function (data) {
   //   console.log(data);
   //   renderTweets(data);
@@ -98,17 +99,18 @@ $(document).ready(function() {
     if (counterNum <= -1) {
       event.preventDefault();
       if (clickCounter == 0) {
-        $("<div class='new-tweet'><p style ='text-align: center;'>Tweet is too Long!</p></div>").appendTo(".new-tweet").delay(3400).slideUp();
+        $("<div class='new-tweet popup'><p style ='text-align: center;'>Tweet is too Long!</p></div>").appendTo(".new-tweet").delay(3400).slideUp();
         clickCounter = 1;
-        setTimeout( function() { clickCounter = 0; }, 5000);
+        setTimeout( function() {console.log("timeout"); clickCounter = 0; $(".popup").remove(); }, 5000);
+
       }
 
     } else if (textBox.val() === null || textBox.val() === "") {
       event.preventDefault();
       if (clickCounter == 0) {
-        $("<div class='new-tweet'><p style ='text-align: center;'>No Text was entered!</p></div>").appendTo(".new-tweet").delay(3400).slideUp();
+        $("<div class='new-tweet popup'><p style ='text-align: center;'>No Text was entered!</p></div>").appendTo(".new-tweet").delay(3400).slideUp();
         clickCounter = 1;
-        setTimeout( function() { clickCounter = 0; }, 5000);
+        setTimeout( function() { clickCounter = 0; $(".popup").remove(); }, 5000);
       }
     } else {
       clickCounter = 0;
