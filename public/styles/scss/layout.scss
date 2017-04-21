@@ -3,24 +3,32 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
-  box-sizing: border-box; }
 
+$color: #244751;
+
+html {
+  box-sizing: border-box;
+}
 *, *:before, *:after {
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 /*
  * Global layout stuff
  */
+
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  color: #244751;
-  background-color: #eee; }
+  color: $color;
+  background-color: #eee;
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+
 main {
   width: 450px;
   margin-top: 80px;
@@ -28,7 +36,9 @@ main {
   margin-right: auto;
   background-color: white;
   padding-bottom: 50px;
-  padding-top: 20px; }
+  padding-top: 20px;
+}
+
 
 .tweet {
   margin-top: 15px;
@@ -36,7 +46,8 @@ main {
   margin-right: auto;
   width: 85%;
   border-radius: 10px;
-  border: 1px solid #bebebe; }
+  border: 1px solid #bebebe;
+}
 
 .profilePic {
   margin-top: 10px;
@@ -44,60 +55,78 @@ main {
   border-radius: 2px;
   height: 40px;
   width: 40px;
-  opacity: 0.5; }
+  opacity: 0.5;
+}
 
 .tweet header {
   height: 65px;
   border-radius: 10px 10px 0 0;
   width: 100%;
-  background-color: #eee; }
+  background-color: #eee
+}
 
 .tweet header h3 {
   color: #4B8696;
   margin: 10px 0 15px 5px;
   line-height: 60px;
   vertical-align: top;
-  display: inline; }
+  display: inline;
+}
 
 .tweet header span {
   padding-right: 10px;
   padding-top: 20px;
-  float: right; }
+  float: right;
+}
 
 .mainTweet {
   height: 75px;
   padding-left: 10px;
-  padding-top: 10px; }
+  padding-top: 10px;
+}
 
 .tweet footer {
   font-size: 12px;
-  border-top: 1px solid #eee; }
+  border-top: 1px solid #eee
+}
 
-.tweet footer span {
+.tweet {
+
+  footer span {
   padding-top: 10px;
   margin: 15px 0 0 5px;
-  line-height: 35px; }
+  line-height: 35px;
+  }
+}
 
 .tweetIcons {
   margin-top: 6px;
   margin-right: 6px;
   display: inline-block;
-  float: right; }
-
+  float: right;
+}
 .icons {
   visibility: hidden;
   margin: 5px;
-  color: #7AC3B7; }
+  color: #7AC3B7
+}
 
 .iconSpacing {
-  margin-left: 59%; }
+  margin-left: 59%;
+}
+
 
 /* HOVER */
+
+
 .tweet:hover .icons {
-  visibility: visible; }
+visibility: visible;
+}
 
 .tweet:hover header h3 {
-  color: #244751; }
+  color: $color
 
+}
 .tweet:hover .profilePic {
-  opacity: 1; }
+  opacity: 1;
+}

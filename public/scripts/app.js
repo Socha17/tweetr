@@ -3,8 +3,34 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+ function calcTime(tweetDate) {
+
+   let today = +new Date();
+   let timeSincePost = today - tweetDate.created_at;
+
+   let mins = (timeSincePost / (1000*60));
+   let hours = (timeSincePost / (1000*60*60));
+   let days = (timeSincePost / (1000*60*60*24));
+   let weeks = (timeSincePost / (1000*60*60*24*7));
+
+   if (mins < 60) {
+     return tweetDate.created_at = Math.round(mins) + " Minutes ago"
+   }
+   if (hours < 24) {
+     return tweetDate.created_at = Math.round(hours) + " Hours ago"
+   }
+   if (days < 6) {
+     return tweetDate.created_at = Math.round(days) + " Days ago"
+   }
+   if (weeks > 52) {
+     return tweetDate.created_at = Math.round(weeks) + " Weeks ago"
+   }
+
+ }
 
 function createTweetElement(tweet) {
+  calcTime(tweet)
+
   return `
      <article class="tweet">
       <header>
@@ -14,7 +40,7 @@ function createTweetElement(tweet) {
         <span>${escape(tweet.content.text)}</span>
       </div>
       <footer>
-        <span>${escape(tweet.created_at)}</span><i class="iconSpacing icons fa fa-flag" aria-hidden="true"></i><i class="icons fa fa-retweet" aria-hidden="true"></i><i class="icons fa fa-heart" aria-hidden="true"></i>
+        <span>${escape(tweet.created_at)}</span><div class="tweetIcons"><i class=" icons fa fa-flag" aria-hidden="true"></i><i class="icons fa fa-retweet" aria-hidden="true"></i><i class="icons fa fa-heart" aria-hidden="true"></i></div>
       </footer>
     </article>
     `;
@@ -29,6 +55,7 @@ function renderTweets(tweets) {
 
   // THIS IS GOOD CODE
   let tweetsHtml = tweets.map(createTweetElement)
+    tweetsHtml.reverse()
   $('#feed').prepend(tweetsHtml)
 }
 
