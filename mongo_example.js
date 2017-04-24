@@ -18,8 +18,6 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 
   // ==> Let's "get all the tweets". In Mongo-speak, we "find" them.
 
-     // Lazy error handling:
-
 
    function getTweets(callback) {
      db.collection("tweets").find().toArray((err, tweets) => {
@@ -29,8 +27,6 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
        callback(null, tweets)
      });
    }
-
-
 
     // ==> So we Read The Fantastic Manual, right?
 

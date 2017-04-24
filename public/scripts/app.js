@@ -68,10 +68,7 @@ function escape(str) {
 $(document).ready(function() {
 
 
-  // $.getJSON('/tweets', function (data) {
-  //   console.log(data);
-  //   renderTweets(data);
-  // });
+
 
  $('.new-tweet').css('display', 'none')
 
@@ -83,6 +80,11 @@ $(document).ready(function() {
 
  })
 
+ // ANOTHER WAY OF AJAX CALL WITH JQUERY
+ // $.getJSON('/tweets', function (data) {
+ //   console.log(data);
+ //   renderTweets(data);
+ // });
 
  function loadTweets() {
    $.ajax({
@@ -95,9 +97,7 @@ $(document).ready(function() {
      }
    });
  }
-
     loadTweets()
-
 
     function getNewTweets() {
       $.ajax({
@@ -149,7 +149,6 @@ $(document).ready(function() {
         method: 'POST',
         data: $('#tweetText').serialize(),
         success: function () {
-          console.log('success');
           $('#tweetText').val("")
           $(".counter").text('140')
           getNewTweets()
